@@ -6,8 +6,8 @@ DEBUG_APK=tailscale-debug.apk
 RELEASE_AAB=tailscale-release.aab
 APPID=com.tailscale.ipn
 AAR=android/libs/ipn.aar
-KEYSTORE=tailscale.jks
-KEYSTORE_ALIAS=tailscale
+KEYSTORE=keys/wsmlby-v2.keystore
+KEYSTORE_ALIAS=v2
 TAILSCALE_VERSION=$(shell ./version/tailscale-version.sh 200)
 OUR_VERSION=$(shell git describe --dirty --exclude "*" --always --abbrev=200)
 TAILSCALE_VERSION_ABBREV=$(shell ./version/tailscale-version.sh 11)
@@ -81,7 +81,6 @@ $(RELEASE_AAB): release_aar
 
 release: $(RELEASE_AAB)
 	jarsigner -sigalg SHA256withRSA -digestalg SHA-256 -keystore $(KEYSTORE) $(RELEASE_AAB) $(KEYSTORE_ALIAS)
-
 install: $(DEBUG_APK)
 	adb install -r $(DEBUG_APK)
 

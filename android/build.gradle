@@ -22,7 +22,8 @@ apply plugin: 'com.android.application'
 
 android {
 	ndkVersion "23.1.7779620"
-	compileSdkVersion 30
+	compileSdkVersion 31
+        //applicationId "com.wsmlby.tailscale"
 	defaultConfig {
 		minSdkVersion 22
 		targetSdkVersion 30
@@ -38,9 +39,11 @@ android {
 		fdroid {
 			// The fdroid flavor contains only free dependencies and is suitable
 			// for the F-Droid app store.
+			applicationId "com.wsmlby.tailscale"
 		}
 		play {
 			// The play flavor contains all features and is for the Play Store.
+ 			applicationId "com.wsmlby.tailscale"
 		}
 	}
 }

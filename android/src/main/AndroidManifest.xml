@@ -22,6 +22,7 @@
 			android:theme="@style/Theme.GioApp"
 			android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
 			android:windowSoftInputMode="adjustResize"
+			android:exported="true"
 			android:launchMode="singleTask">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -55,6 +56,7 @@
 			</intent-filter>
 		</activity>
 		<service android:name=".IPNService"
+			android:exported="true"
 			android:permission="android.permission.BIND_VPN_SERVICE">
 			<intent-filter>
 				<action android:name="android.net.VpnService"/>
@@ -64,6 +66,7 @@
 			android:name=".QuickToggleService"
 			android:icon="@drawable/ic_tile"
 			android:label="@string/tile_name"
+			android:exported="true"
 			android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
 		<intent-filter>
 			<action android:name="android.service.quicksettings.action.QS_TILE"/>
